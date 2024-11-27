@@ -1,0 +1,43 @@
+﻿@page
+@model VideoSharingSite.Pages.Statistic.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Statistics</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Statistics.TargetAudience)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Statistics.TargetAudience)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Statistics.AverageViewsPerHour)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Statistics.AverageViewsPerHour)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Statistics.AverageCommentsPerHour)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Statistics.AverageCommentsPerHour)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Statistics.AveragePercentageWatchtime)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Statistics.AveragePercentageWatchtime)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Statistics.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

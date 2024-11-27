@@ -1,0 +1,46 @@
+﻿@page
+@model VideoSharingSite.Pages.Statistic.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Statistics</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Statistics.TargetAudience)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Statistics.TargetAudience)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Statistics.AverageViewsPerHour)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Statistics.AverageViewsPerHour)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Statistics.AverageCommentsPerHour)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Statistics.AverageCommentsPerHour)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Statistics.AveragePercentageWatchtime)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Statistics.AveragePercentageWatchtime)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Statistics.ID" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>
