@@ -12,7 +12,7 @@ namespace VideoSharingConsole
         public static List<VideoSharingPlatform.Video> GetVideosFromCreator(VideoSharingContext db, int creatorId)
         {
             IEnumerable<VideoSharingPlatform.Video> query = from v in db.Video
-                                                            where v.ID == creatorId
+                                                            where v.Creator.ID == creatorId
                                                             select v;
             return query.ToList();
         }
@@ -20,7 +20,7 @@ namespace VideoSharingConsole
         public static List<VideoSharingPlatform.Statistics> GetStatisticsFromVideo(VideoSharingContext db, int videoId)
         {
             IEnumerable<VideoSharingPlatform.Statistics> query = from s in db.Statistics
-                                                            where s.ID == videoId
+                                                            where s.Video.ID == videoId
                                                             select s;
             return query.ToList();
         }
