@@ -20,8 +20,9 @@ namespace VideoSharingConsole
         public static List<VideoSharingPlatform.Statistics> GetStatisticsFromVideo(VideoSharingContext db, int videoId)
         {
             IEnumerable<VideoSharingPlatform.Statistics> query = from v in db.Video
-                                                                 from s in db.Statistics
-                                                                 where v.StatisticsID == s.ID
+                                                                 join s in db.Statistics on
+                                                                 v.StatisticsID equals s.ID
+                                                                 where v.ID == videoId
                                                                  select s;
             return query.ToList();
         }
